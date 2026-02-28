@@ -1,4 +1,8 @@
 """
+[DEPRECATED] data_quality_assessment.py
+The primary deliverable is now: notebooks/data_quality_assessment.ipynb
+This script is kept for reference only and should not be used.
+----------------------------------------------------------------------
 data_quality_assessment.py
 Data Engineer – DEGO Project Team 4
 
