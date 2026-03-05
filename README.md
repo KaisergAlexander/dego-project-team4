@@ -125,3 +125,39 @@ The most serious finding is that **gender remains a highly significant predictor
 | **Ongoing** | Annual bias audits covering baseline, conditional, pricing, and intersectional dimensions | EU AI Act Art. 9 |
 | **Ongoing** | Re-test spending proxy when per-category sample size reaches n ≥ 30 | Inconclusive proxy test |
 
+---
+
+## Privacy & Governance Analysis (Governance Officer)
+
+**Notebook:** `notebooks/03_privacy_demo.ipynb`  
+**Dataset:** `Data/cleaned_credit_applications.json` — 502 records  
+**Regulatory Frameworks:** GDPR (2016/679) · EU AI Act (2024/1689)
+
+The governance audit assessed NovaCred's data processing practices against GDPR 
+requirements and EU AI Act obligations. Credit scoring is classified as **high-risk 
+under EU AI Act Annex III**, triggering a full set of compliance obligations that 
+NovaCred currently does not meet.
+
+### PII & Privacy Risk
+
+All 7 PII fields (SSN, full name, email, IP address, date of birth, zip code, gender) 
+are present in near every record (≥99% coverage). SSNs are stored in plaintext — 
+a critical exposure. Three sensitive spending categories (Alcohol, Gambling, Adult 
+Entertainment) are collected across 23 records with no documented necessity under 
+GDPR Art. 5(1)(c). Keyed HMAC-SHA256 pseudonymization was demonstrated on the SSN 
+field and verified for determinism, distinctness, and zero collisions.
+
+### Governance Gaps
+
+Of 6 required governance metadata fields, only `processing_timestamp` exists in the 
+dataset — and even that is incomplete (present on 12.4% of records only). The 
+remaining 5 are entirely absent: consent tracking, retention policy, data source, 
+human review flag, and decision explanation. The overall GDPR compliance profile 
+scores **2 out of 24** across 8 principles (~8%).
+
+### Recommendations
+
+Immediate priorities are establishing a lawful basis (`consent_timestamp`), 
+pseudonymizing SSNs, and adding a human review workflow for automated rejections. 
+A formal DPIA is required before the system can be considered lawfully operated 
+under GDPR Art. 35.
