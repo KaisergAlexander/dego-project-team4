@@ -37,6 +37,7 @@ data/
 notebooks/
   01_data_quality_assessment.ipynb      Data Engineer primary deliverable
   02_bias_analysis.ipynb                Data Scientist primary deliverable
+  03_privacy_demo.ipynb                 Governance Officer primary deliverable
 Assignment_information/                 Lecture code and project brief
 reports/
   findings.md                           Detailed data quality findings
