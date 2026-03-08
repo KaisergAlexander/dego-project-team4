@@ -1,7 +1,27 @@
-# Data-Ecosystems — NovaCred Credit Application Governance Analysis
+# NovaCred Credit Application Governance Analysis
 
-Group assignment — Data Ecosystems and Governance in Organizations (DEGO 2606)
-Nova School of Business and Economics — MSc Business Analytics
+**Course:** Data Ecosystems and Governance in Organizations (DEGO 2606)  
+**Institution:** Nova School of Business and Economics — MSc Business Analytics  
+**Team:** Group 4 · Data Governance Task Force
+
+---
+
+## Executive Summary
+
+A governance audit of 502 raw credit applications revealed three interconnected crises:
+
+**Data Quality:** 87.6% of records have no audit timestamp — a direct GDPR Art. 5(2) violation. 3 approved loans have zero income on record. Duplicate SSNs across different people signal fraud risk. A 5-step cleaning pipeline reduced the dataset to 500 usable records.
+
+**Bias & Fairness:** Female applicants are approved at 50.6% vs. 66.0% for males (DI = 0.767, below the 0.80 threshold). After controlling for all financial variables, gender remains a highly significant predictor of approval (OR = 2.01, p = 0.0003) — male applicants with identical profiles are **twice as likely to be approved**. Young female applicants face the worst outcome at 31.2% approval (DI = 0.591).
+
+**Privacy & GDPR:** 7 PII fields identified, SSNs stored in plaintext. GDPR compliance score: 2/24 (8%). 5 of 6 required governance fields entirely absent. Credit scoring is classified as high-risk under EU AI Act Annex III — full compliance obligations apply.
+
+**Immediate actions required:** legal review of the gender disparity, SSN pseudonymisation, and enforcement of the processing timestamp before continued operation is justifiable.
+
+---
+
+## Video Presentation
+Watch here (LINK)
 
 ---
 
@@ -161,3 +181,14 @@ Immediate priorities are establishing a lawful basis (`consent_timestamp`),
 pseudonymizing SSNs, and adding a human review workflow for automated rejections. 
 A formal DPIA is required before the system can be considered lawfully operated 
 under GDPR Art. 35.
+
+## Team & Individual Contributions
+
+| Role | Name | Primary Deliverable |
+|---|---|---|
+| **Data Engineer** | Alexander Kaisergruber | Data loading, cleaning pipeline, deduplication — `01_data_quality_assessment.ipynb` |
+| **Data Scientist** | Ashwin Rajesh | Bias analysis, fairness metrics, logistic regression — `02_bias_analysis.ipynb` |
+| **Governance Officer** | Miguel Alexandre Neves Silva Sardo | PII mapping, pseudonymisation demo, GDPR/AI Act analysis — `03_privacy_demo.ipynb` |
+| **Product Lead** | Fernanda Solms | Presentation, coordination, README documentation |
+
+*Individual commit contributions are visible in the Git history.*
