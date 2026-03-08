@@ -152,7 +152,7 @@ The most serious finding is that **gender remains a highly significant predictor
 ## Privacy & Governance Analysis (Governance Officer)
 
 **Notebook:** `notebooks/03_privacy_demo.ipynb`  
-**Dataset:** `Data/cleaned_credit_applications.json` — 502 records  
+**Dataset:** `Data/cleaned_credit_applications.json` — 500 records (Silver layer)
 **Regulatory Frameworks:** GDPR (2016/679) · EU AI Act (2024/1689)
 
 The governance audit assessed NovaCred's data processing practices against GDPR 
