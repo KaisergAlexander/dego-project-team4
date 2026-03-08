@@ -21,7 +21,8 @@ A governance audit of 502 raw credit applications revealed three interconnected 
 ---
 
 ## Video Presentation
-Watch here (LINK)
+**Watch the presentation video:**  
+[Click here to watch](presentation/DEGO_project_team4_video.mp4)
 
 ---
 
